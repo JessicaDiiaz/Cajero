@@ -5,6 +5,7 @@ import modelos.Banco;
 import modelos.Cliente;
 import modelos.Cuenta;
 import modelos.Tarjeta;
+import modelos.enums.TipoCuenta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,9 +42,14 @@ public class PoblarImpl implements IPoblar {
     @Override
     public List<Cuenta> CrearCuentas() {
         List<Cuenta> cuentas = new ArrayList<>();
+        Banco bbva = new Banco("BBVA");
+        Cliente cliente1 = new Cliente("Ilahi", "Chavez",2014,123456789);
+        Tarjeta tarjeta = new Tarjeta(1000, 1000, 100, "");
+        Cuenta cuenta1 = new Cuenta(bbva, cliente1, tarjeta, null);
 
+        cuentas.add(cuenta1);
 
-        return null;
+        return cuentas;
     }
 
     @Override

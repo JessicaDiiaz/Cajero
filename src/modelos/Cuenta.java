@@ -1,16 +1,18 @@
 package modelos;
 
+import modelos.enums.TipoCuenta;
+
 public class Cuenta {
     private Banco banco;
     private Cliente cliente;
     private Tarjeta tarjeta;
-    private String TipoCuenta;
+    private TipoCuenta tipoCuenta;
 
-    public Cuenta(Banco banco, Cliente cliente, Tarjeta tarjeta, String tipoCuenta) {
+    public Cuenta(Banco banco, Cliente cliente, Tarjeta tarjeta, TipoCuenta tipoCuenta) {
         this.banco = banco;
         this.cliente = cliente;
         this.tarjeta = tarjeta;
-        TipoCuenta = tipoCuenta;
+        this.tipoCuenta = tipoCuenta;
     }
 
     public Banco getBanco() {
@@ -37,12 +39,12 @@ public class Cuenta {
         this.tarjeta = tarjeta;
     }
 
-    public String getTipoCuenta() {
-        return TipoCuenta;
+    public TipoCuenta getTipoCuenta() {
+        return tipoCuenta;
     }
 
-    public void setTipoCuenta(String tipoCuenta) {
-        TipoCuenta = tipoCuenta;
+    public void setTipoCuenta(TipoCuenta tipoCuenta) {
+        this.tipoCuenta = tipoCuenta;
     }
 
     @Override
@@ -51,7 +53,7 @@ public class Cuenta {
                 "banco=" + banco +
                 ", cliente=" + cliente +
                 ", tarjeta=" + tarjeta +
-                ", TipoCuenta='" + TipoCuenta + '\'' +
+                ", tipoCuenta=" + tipoCuenta +
                 '}';
     }
 }
